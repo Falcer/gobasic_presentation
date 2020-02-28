@@ -4,149 +4,451 @@ import {
   Step,
 } from "code-surfer";
 import { github, vsDark } from "@code-surfer/themes";
+import "prismjs/components/prism-smalltalk";
+
+import Small from "./layout/Small";
 
 export const theme = vsDark;
 
-# Hello 👋
+# Golang Basic
 
-You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
+---
+
+# 1. Hello World 💩
 
 ---
 
 <CodeSurfer>
 
-```js title="This is a title" subtitle="and this a subtitle"
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
+```go
+package main
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
+```
 
-  if (!sit || ut < 1) {
-    return [];
-  }
+```go
+package main
 
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
+func main() {
 }
 ```
 
-```js
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World 🔥")
 }
-
-function adipiscing(...elit) {
-  if (!elit.sit) {
-    return [];
-  }
-
-  const sed = elit[0];
-  return eiusmod.tempor(sed) ? sed : [sed];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-```
-
-```diff 1[10:14],2[15:19],3[22:27],10:12
-
 ```
 
 </CodeSurfer>
 
 ---
 
-<CodeSurferColumns themes={[vsDark, github]}>
-
-<Step>
-
-```js
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
-```
-
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
-```
-
-</Step>
-
-<Step>
-
-```js
-const lorem = (ipsum, dolor, sit) => {
-  const amet = dolor - ipsum;
-  return consectetur.adipiscing(
-    {
-      elit: sed.eiusmod(sit - dolor) / amet + 2,
-    },
-    (tempor, incididunt) => ipsum + amet * incididunt
-  );
-};
-
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
-```
-
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
-
-const sed = (eiusmod, tempor, incididunt) => {
-  const ut = tempor - eiusmod;
-  return labore.et(
-    {
-      amet: dolore.magna(incididunt - tempor) / ut + 2,
-    },
-    (aliqua, elit) => eiusmod + ut * elit
-  );
-};
-```
-
-</Step>
-
-</CodeSurferColumns>
+# 2. Variable
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+<CodeSurfer>
+
+```go
+package main
+
+func main() {
+}
+```
+
+```go
+package main
+
+func main() {
+	var name string = "Arga"
+	a := 1
+	b := 3.14
+	c := 'A'
+	d := 'Hello World 💩'
+	e := true
+}
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var name string = "Arga"
+	a := 1
+	b := 3.14
+	c := 'A'
+	d := 'Hello World 💩'
+	e := true
+	fmt.Println(name)
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
+	fmt.Println(e)
+}
+```
+
+</CodeSurfer>
+
+---
+
+# 3.a. Array
+
+---
+
+<CodeSurfer>
+
+```go 1[1:20]
+var array [3]uint32
+```
+
+```go 1[23:44]
+var array [3]uint32 = [3]uint32{21, 43, 23}
+```
+
+```go
+var array [3]uint32 = [3]uint32{21, 43, 23}
+fmt.Println(array[0])
+fmt.Println(array[1])
+fmt.Println(array[2])
+```
+
+</CodeSurfer>
+
+---
+
+# 3.b. Slice
+
+---
+
+<CodeSurfer>
+
+```go
+var slice []uint32
+```
+
+```go
+var slice []uint32 = []uint32{21, 23, 65}
+```
+
+```go
+var slice []uint32 = []uint32{21, 23, 65}
+slice = append(slice, 90)
+```
+
+```go 2[9:14]
+var slice []uint32 = []uint32{21, 23, 65}
+slice = append(slice, 90)
+```
+
+```go 2[16:20]
+var slice []uint32 = []uint32{21, 23, 65}
+slice = append(slice, 90)
+```
+
+```go 2[23:24]
+var slice []uint32 = []uint32{21, 23, 65}
+slice = append(slice, 90)
+```
+
+</CodeSurfer>
+
+---
+
+# 4.a Conditional (If)
+
+---
+
+<CodeSurfer>
+
+```go
+if /*statement*/ {
+	// Do Stuff ikkeh kimochi here 👅
+} else {
+	// Awww shit 🖕
+}
+```
+
+```go
+if true {
+	// Do Stuff ikkeh kimochi here 👅
+	fmt.Printn("Yeahh Baby")
+} else {
+	// Awww shit 🖕
+	fmt.Printn("Can you stop it!")
+}
+```
+
+```go
+var name string = "arga"
+if name == "Arga" {
+	fmt.Printn("Well your name is arga (Case Sensitive)")
+} else {
+	fmt.Printn("Who the hell are you??")
+}
+```
+
+</CodeSurfer>
+
+---
+
+# 4.b Conditional (Switch)
+
+---
+
+<CodeSurfer>
+
+```go
+var a uint8 = 3
+```
+
+```go
+var a uint8 = 3
+switch a {
+	case 1:
+	case 2:
+	case 3:
+	default:
+}
+```
+
+```go
+var a uint8 = 3
+switch a {
+	case 1:
+		fmt.Println("Yeay Satu")
+	case 2:
+		fmt.Println("Ber 2 Lebih Baik")
+	case 3:
+		fmt.Println("Rayakan Tiga")
+	default:
+		fmt.Println("This is Default")
+}
+```
+
+</CodeSurfer>
+
+---
+
+# 5.a. Looping
+
+---
+
+<CodeSurfer>
+
+```go
+i := 1
+```
+
+```go
+i := 1
+for i <= 3 {
+    fmt.Println(i)
+    i = i + 1
+}
+```
+
+```go
+for i := 0; i <= 10; i++ {
+    fmt.Println(i)
+}
+```
+
+```go
+for {
+	fmt.Println("Ikeeh~ 🐐")
+}
+```
+
+</CodeSurfer>
+
+---
+
+# 5.b Looping Range
+
+---
+
+<CodeSurfer>
+
+```go
+nums := []int{2, 3, 4}
+```
+
+
+```go
+nums := []int{2, 3, 4}
+sum := 0
+```
+
+
+```go
+nums := []int{2, 3, 4}
+sum := 0
+for _, num := range nums {
+    sum += num
+}
+```
+
+
+```go
+nums := []int{2, 3, 4}
+sum := 0
+for _, num := range nums {
+    sum += num
+}
+fmt.Println("sum:", sum)
+```
+
+</CodeSurfer>
+
+---
+
+# 6. Struct
+
+---
+
+<CodeSurfer>
+
+```go
+type Person struct {
+	name string
+	age uint8
+	isNigga bool
+}
+```
+
+
+```go
+type Person struct {
+	name string
+	age uint8
+	isNigga bool
+}
+
+arga := Person{
+	name: "Arga",
+	age: 20,
+	isNigga: false,
+}
+```
+
+</CodeSurfer>
+
+---
+
+# 7. Pointer
+
+---
+
+<CodeSurfer>
+
+```go
+var nama string
+```
+
+```go
+var nama *string
+```
+
+```go
+var nama *string = nil
+```
+
+```go
+var nama *string = nil
+fmt.Println(nama) // <nil>
+```
+
+```go
+var nama *string = nil
+fmt.Println(nama) // <nil>
+nama = new(string)
+```
+
+```go
+var nama *string = nil
+fmt.Println(nama) // <nil>
+nama = new(string)
+*nama = "Arga"
+```
+
+```go
+var nama *string = nil
+fmt.Println(nama) // <nil>
+nama = new(string)
+*nama = "Arga"
+fmt.Println(nama) // <0x40c140>
+```
+
+```go
+var nama *string = nil
+fmt.Println(nama) // <nil>
+nama = new(string)
+*nama = "Arga"
+fmt.Println(*nama) // "Arga"
+```
+
+</CodeSurfer>
+
+---
+
+# 8. Function
+
+---
+
+<CodeSurfer>
+
+```go
+```
+
+</CodeSurfer>
+
+---
+
+# Thanks 🎉 🎉 🎉
+
+```
+https://gobyexample.com
+```
+
+---
+
+<CodeSurfer>
+
+```md
+But wait a minute 🤔
+```
+
+```md
+Just it?? 😓
+```
+
+```md
+Absolutely hell no 🔥
+```
+
+```md
+We gonna build Rest API, with:
+ - Golang
+ - Mux (Http Hanlder Library)
+ - MySQL (For Database)
+ - JWT (For Authentication)
+ - Implementation Role Based Access Control
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```md
+# Let's get Started 💻 </>
+```
+
+</CodeSurfer>
