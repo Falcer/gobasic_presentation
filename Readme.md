@@ -2,11 +2,11 @@
 
 ## Todos:
 
-	- [x] Hello World
-	- [x] Variable
-	- [x] Array & Slice
-	- [x] Conditional
-	- [x] Looping
-	- [x] Struct
-	- [x] Pointer
-	- [ ] Function
+	[x] Hello World
+	[x] Variable
+	[x] Array & Slice
+	[x] Conditional
+	[x] Looping
+	[x] Struct
+	[x] Pointer
+	[ ] Function
